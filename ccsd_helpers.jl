@@ -16,7 +16,7 @@ end
 
 function cc_ket(H, T, n, r)
     # Construct bch(H, T, n) | HF > and keep only terms of excitation rank r or lower
-    HT = bch(H, T, n) |> act_on_ket |> simplify
+    HT = bch(H, T, n) |> act_on_ket |> SpinAdaptedSecondQuantization.simplify
     terms = [length(t.operators) <= r for t in HT.terms]
     HT_rank = SASQ.Expression(HT[terms])
     return HT_rank
