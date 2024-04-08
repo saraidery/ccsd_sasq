@@ -11,7 +11,6 @@ function get_H()
 
         H = F + Φ
         return H
-
 end
 
 function cc_ket(H, T, n, r)
@@ -21,7 +20,6 @@ function cc_ket(H, T, n, r)
     HT_rank = SASQ.Expression(HT[terms])
     return HT_rank
 end
-
 
 μ_1(a, i) = (1 // 2 * E(i, a))
 
